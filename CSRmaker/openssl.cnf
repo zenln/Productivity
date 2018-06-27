@@ -1,0 +1,28 @@
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+
+[req_distinguished_name]
+countryName = US
+countryName_default = USA
+stateOrProvinceName = 
+stateOrProvinceName_default = 
+localityName = 
+localityName_default = 
+organizationName = Name
+organizationName_default = 
+organizationalUnitName  = 
+organizationalUnitName_default  = 
+commonName = Name
+commonName_default = 
+commonName_max  = 64
+
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+#subjectAltName = @alt_names
+
+# for multi domain cert
+#[alt_names]
+#DNS.1 = sth2.sth.com

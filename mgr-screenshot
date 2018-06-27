@@ -1,0 +1,23 @@
+#!/bin/bash
+# Author: Alen Kansakar
+# Short script to manage Mac screenshot location
+# This is for people who take a lot of screen shot in mac and would like to manage them
+# Second argument is removed. 
+if [ $# -eq 0 ]
+  then 
+    echo "Usage: mgr-screenshot /dir/to/be/saved/in "
+    exit 2
+else
+  # [[ is for pattern matching without it bash does expansion 
+  if [[ $1 != /* ]]; then PT=$PWD"/"$1; else PT=$1; fi
+  if [ ! -d $PT ]
+   then 
+     echo "Location does not exist making it"
+     mkdir $PT
+  fi
+fi
+echo $PT
+#Changing default location
+defaults write com.apple.screencapture location $PT
+#Restarting UI Services
+killall SystemUIServer

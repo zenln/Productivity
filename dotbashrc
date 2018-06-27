@@ -1,0 +1,4 @@
+#.bashrc
+[[ $- = *i* ]] && source /Users/kansakar/Productivity/liquidprompt/liquidprompt
+export PATH
+export LESS="-eirMX"

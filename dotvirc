@@ -1,0 +1,4 @@
+set number
+colorscheme elflord
+autocmd FileType yaml setlocal ai ts=2 sw=2 et
+syntax on
